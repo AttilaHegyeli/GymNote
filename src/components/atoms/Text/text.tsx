@@ -5,6 +5,7 @@ import styles from "./text.styles";
 
 interface CustomTextProps {
   message: string;
+ style?: object;
 }
 
 const CustomText: React.FC<CustomTextProps> = (props) => {

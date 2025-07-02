@@ -1,18 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, Alert} from 'react-native';
-import AuthInputemail from './src/components/molecules/AuthInput/Email/authinputemail';
-import AuthInputpassword from './src/components/molecules/AuthInput/Password/authiInputpassword';
-
 import React from 'react';
-
+import AuthForm from './src/components/templates/AuthForm/Authform';
 
 export default function App() {
   return (
     <View style={styles.container}>
       
-      <Text>Welcome to GymNote!</Text>
-      <AuthInputemail />
-      <AuthInputpassword />
+      <AuthForm />
 
       <StatusBar style="auto" />
     </View>

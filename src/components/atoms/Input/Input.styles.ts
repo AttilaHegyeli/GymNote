@@ -1,10 +1,24 @@
-import styled from "styled-components/native";
+import React from "react";
+import { StyleSheet } from "react-native";
 
-export const StyledInput = styled.TextInput`
-    height: 50px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    margin : 8px 0;
-    `;
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    fontSize: 16,
+    color: "#000",
+    fontFamily: "System",
+    borderRadius: 5,
+  },
+  error: {
+    borderColor: "red",
+  },
+  disabled: {
+    backgroundColor: "#f0f0f0",
+    color: "#a0a0a0",
+  },
+});
+
+export default styles;

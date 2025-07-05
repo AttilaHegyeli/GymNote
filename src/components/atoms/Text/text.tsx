@@ -1,19 +1,22 @@
 import React from "react";
-import { Text } from "react-native";
-import styles from "./text.styles";
+import { Text as TextRN } from "react-native";
+import { StyleProp, TextStyle } from "react-native";
 
+interface CustomTextProps extends React.ComponentProps<typeof TextRN> {
+  style?: StyleProp<TextStyle>;
+ }
 
-interface CustomTextProps {
-  message: string;
- style?: object;
-}
+export const Text: React.FC<CustomTextProps> = ({ style, ...otherProps }) => {
 
-const CustomText: React.FC<CustomTextProps> = (props) => {
-  const textStyles = [styles.text];
   return (
-    <Text style={textStyles}>
-      {props.message}
-    </Text>
+    <TextRN
+      style={style}
+      {...otherProps}>
+      {otherProps.children}
+
+      
+    </TextRN>
+    
+
   );
-}
-export default CustomText;
+};

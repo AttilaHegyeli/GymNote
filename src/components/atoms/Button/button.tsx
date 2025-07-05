@@ -1,21 +1,13 @@
 import React from "react";
-import { Button,View } from "react-native";
-import styles from "./button.style";
+import { Button as ButtonRN } from "react-native";
+import { ComponentProps } from "react";
 
-interface CustomButtonProps {
-  title: string;
-  onPress: () => void;
-}
+interface CustomButtonProps extends ComponentProps<typeof ButtonRN> { }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ title, onPress }) => {
+export const Button: React.FC<CustomButtonProps> = ({ ...otherProps }) => {
   return (
-    <View style={styles.button}>
-      <Button
-        title={title}
-        onPress={onPress}
-      />
-    </View>
+    <ButtonRN
+      {...otherProps}
+    />
   );
 };
-
-export default CustomButton;

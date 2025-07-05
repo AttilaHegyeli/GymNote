@@ -1,31 +1,13 @@
 import React from "react";
-import { TextInput } from "react-native";
-import styles from "./Input.styles";
+import { TextInput as InputRN } from "react-native";
+import { ComponentProps } from "react";
 
-interface CustomInputProps {
-  placeholder?: string;
-  value?: string;
-  onChangeText?: (text: string) => void;
-  secureTextEntry?: boolean;
-  style?: object;
-}
+interface CustomInputProps extends ComponentProps<typeof InputRN> { }
 
-const CustomInput: React.FC<CustomInputProps> = ({
-  placeholder,
-  value,
-  onChangeText,
-  secureTextEntry = false,
-  style,
-}) => {
+export const Input: React.FC<CustomInputProps> = ({ ...otherProps }) => {
   return (
-    <TextInput
-      placeholder={placeholder}
-      value={value}
-      onChangeText={onChangeText}
-      secureTextEntry={secureTextEntry}
-      style={[styles.input, style]}
+    <InputRN
+      {...otherProps}
     />
   );
-}
-
-export default CustomInput;
+};

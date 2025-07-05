@@ -26,16 +26,7 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font",
-      {
-        "fonts": [
-          {
-            "name": "Garamond",
-            "asset": "./assets/fonts/Garamond.ttf"
-          }
-        
-        ]
-      }
+      "expo-font"
     ]
   }
 }

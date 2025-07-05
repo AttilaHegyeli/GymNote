@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, Pressable } from '../../atoms';
 import { createStyleSheet } from '../../../utils/styles/StyleSheet';
 import { colors } from '../../../utils/colors/colors';
-
-
+import { Dimensions } from 'react-native';
+const { height } = Dimensions.get('window');
 
 export const TermsAndCondition = () => {
     const handlePress = () => {
@@ -27,27 +27,27 @@ export const TermsAndCondition = () => {
 };
 
 const styles = createStyleSheet({
-    text: {
-        fontSize: 12,
-        color: colors.text,
-        opacity: 0.5,
-    },
-    link: {
-        fontSize: 12,
-        color: colors.link,
-        textShadowColor: colors.link,
-        textShadowOffset: { width: 0, height: 0 },
-        textShadowRadius: 4,
-        padding: 2,
-
-    },
-    container: {
-
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        bottom: 40,
-        paddingBottom: 20,
-    },
+   container: {
+    position: 'absolute',
+    bottom: height * 0.03, 
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  text: {
+    fontSize: 12,
+    color: colors.text,
+    opacity: 0.5,
+    textAlign: 'center',
+  },
+  link: {
+    fontSize: 12,
+    color: colors.link,
+    textShadowColor: colors.link,
+    textShadowOffset: { width: 0, height: 0 },
+    textShadowRadius: 4,
+    padding: 2,
+    textAlign: 'center',
+  },
 });
 
